@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoofify</title>
+    <style>
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/04/62/68/10/360_F_462681022_kKv7FqMJD3ouD6LUYdDDkpKyZoh843P1.jpg');
+            color: white;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+            font-size: 70px;
+            color: rgb(74, 246, 0);
+            margin-top: 10px;
+        }
+
+        p{
+            font-size: 20px;
+            text-align: center;
+            color: rgb(24, 126, 151);
+        }
+        .names {
+            margin-bottom: 10px;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+        }
+        .next-button {
+            background-color: #09e410; /* Green background */
+            border: none; /* No border */
+            color: rgb(0, 0, 0); /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Center text */
+            text-decoration: none; /* No text decoration */
+            display: inline-block; /* Inline block */
+            font-size: 16px; /* Font size */
+            margin: 30px 30px; /* Margin */
+            cursor: pointer; /* Cursor style */
+            border-radius: 10px; /* Border radius */
+            transition-duration: 0.4s; /* Transition duration */
+        }
+
+        /* Hover effect */
+        .next-button:hover {
+            background-color: #111c81; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+    <h1>SPOOFIFY</h1>
+    <div class="video-container">
+        <img src="{{ url_for('video_feed') }}" width="600" height="480">
+    </div>
+     <!-- Button to move to the next page -->
+     <form action="/detect_spoofing" method="post">
+        <button type="submit" class="next-button">SIGN IN</button>
+    </form>
+</html>
